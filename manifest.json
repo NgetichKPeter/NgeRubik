@@ -1,0 +1,17 @@
+{
+  "short_name": "NgeRubik",
+  "name": "NgeRubik 3D Cube Game",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/566/566311.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#15803d",
+  "theme_color": "#38bdf8",
+  "display": "standalone",
+  "orientation": "portrait"
+}
