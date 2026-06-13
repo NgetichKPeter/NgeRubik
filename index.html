@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NgeRubik</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#38bdf8">
+    
+    <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="canvas-container"></div>
+
+    <div id="ui-container">
+        <h1>NgeRubik</h1>
+        <div class="dashboard">
+            <div class="timer-setup">
+                <label for="user-minutes">Set Minutes:</label>
+                <input type="number" id="user-minutes" value="2" min="1" max="60">
+            </div>
+            <div class="timer-display" id="timer-out">02:00</div>
+            <div class="btn-group">
+                <button class="scramble-btn" id="scramble-btn">Scramble</button>
+                <button id="start-btn">Start Game</button>
+                <button class="reset-btn" id="reset-btn">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="separation-line"></div>
+    <div class="zone-hint" id="hint-top">Swipe Along Cube Faces to Turn Layers</div>
+    <div class="zone-hint" id="hint-bottom">Swipe Here at the Very Bottom to Rotate View</div>
+
+    <script src="game.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker registered successfully.'))
+                    .catch(err => console.log('Service Worker registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>
